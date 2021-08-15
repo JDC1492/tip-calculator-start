@@ -11,12 +11,13 @@ total = input('What was the total of the bill?\n')
 tip = input("What percentage tip would you like to give?\n10, 12, or 15?\n")
 
 tip_float = int(tip)/100 
-total_w_tip = float(total) * round(tip_float, 2) + float(total)
+total_w_tip = float(total) * round(tip_float) + float(total)
 
 prty = input("How many people to split the bill?")
 
-indi_amount = total_w_tip / int(prty)
+indi_amount = total_w_tip / round(int(prty),2)
+print(type(indi_amount))
 
 # print(type(tip_float))
 
-print(f'Each person should pay: {indi_amount}')
+print(f'Each person should pay: {round(indi_amount, 2)}')
